@@ -5,18 +5,4 @@
   "main": "index.html",
   "scripts": {
     "start": "serve"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/codesandbox-app/static-template.git"
-  },
-  "keywords": [
-    "static",
-    "template",
-    "codesandbox"
-  ],
-  "author": "MAURO",
-  "license": "MIT"
-  },
-  "homepage": "https://github.com/progettazionemauro/basic-vuejs-static/edit/master#readme"
-}
+  }
