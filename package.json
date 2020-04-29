@@ -1,5 +1,5 @@
 {
-  "name": "statica",
+  "name": "feed-prva",
   "version": "1.0.0",
   "main": "index.html",
   "scripts": {
@@ -15,5 +15,6 @@
     "url": "https://github.com/progettazionemauro/statica-template/issues"
   },
   "homepage": "https://github.com/progettazionemauro/statica-template#readme",
-  "description": ""
+  "description": "",
+  "keywords": []
 }
