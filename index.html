@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>VueJS Dresden Meetup</title>
+  </head>
+  <body class="bg-grey-lightest">
+    <div id="app">
+      <nav
+        class="py-6 bg-white border-t-8 border-green"
+      >
+      <div class="container flex justify-between px-8 mx-auto">
+        <ul class="list-reset text-grey-darker flex">
+          <li class="text-xl mr-4"><a class="no-underline text-grey-darkest font-semibold hover:text-green" href="https://vuejs.org/v2/guide/" target="_blank">Vue Docs</a></li>
+          <li class="text-xl mr-4"><a class="no-underline text-grey-darkest font-semibold hover:text-green" href="https://tailwindcss.com/docs/what-is-tailwind/" target="_blank">Tailwind</a></li>
+        </ul>
+        <div class="flex align-center">
+          <button class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded" v-on:click="alert">
+            📢 Achtung!
+          </button>
+        </div>
+        </div>
+      </nav>
+      <header class="py-32 px-8 py-4 bg-white rounded text-center bg-green">
+        <div class="mx-auto container">
+          <h1 class="w-auto text-5xl leading-normal text-white text-green-lightest">VueJS Dresden Meetup</h1>
+          <p class="w-auto text-2xl text-green-darker mb-16">
+            Hands-on Beginner Workshop 👨🏻‍💻 👩🏻‍💻
+          </p>
+          <p class="text-4xl font-bold text-green-darkest">Hi, {{ participant }}! 👋🏻</p>
+        </div>
+      </header>
+      <div class="posts px-16 py-8 container mx-auto">
+        <div class="post-wrapper">
+          <h2 class="mx-auto text-center text-grey-darker py-4 mb-8">
+            Aktuelle Beiträge
+          </h2>
+        </div>
+        <post-card v-for="(post,i) in posts" :key="post.id" :title="post.title" :body="post.body" :url="post.url" :tags="post.tags"></post-card>
+        <div class="form">
+          <h2 class="mx-auto text-center text-grey-darker py-4 mb-8">
+            Formulare
+          </h2>
+          <div class="f-wrapper bg-white rounded p-8 flex">
+            <form class="p-4 w-1/2">
+              <input
+                v-model="name"
+                class="bg-grey-lighter appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-green mb-4"
+                type="text"
+                placeholder="Dein Name"
+              />
+              <input
+                v-model="email"
+                type="email"
+                class="bg-grey-lighter appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-green mb-4"
+                placeholder="Deine Email"
+              />
+              <textarea
+                v-model="text"
+                class="bg-grey-lighter appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-green mb-4"
+                id=""
+                cols="30"
+                rows="10"
+              ></textarea>
+            </form>
+            <div class="w-1/2 p-4">
+              <div v-if="name" class="text-grey-light font-bold text-xl mb-8">Vorschau</div>
+              <div v-if="name" class="text-grey-darker mb-4">
+                Eingabe für Name: {{ name }}
+              </div>
+              <div v-if="email" class="text-grey-darker mb-4">Eingabe für Email:
+              {{ email }}
+            </div>
+            <div v-if="text" class="text-grey-darker mb-4">
+              Eingabe für Text: {{ text }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+  <script src="main.js"></script>
+</html>
