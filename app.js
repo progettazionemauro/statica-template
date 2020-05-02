@@ -5,9 +5,9 @@ const SECTIONS = "home, arts, automobiles, books, business, fashion, food, healt
 
 function buildUrl(url) {
   // funzionante 
-  //return 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/nytimes-api.json';
+  return 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/nytimes-api.json';
  
-return 'https://api.nytimes.com/svc/search/v2/articlesearch.json?q=election&api-key=Z2WEDMiwO1hxuj5Mwbjc4zMjybe8iNUl'
+//return 'https://api.nytimes.com/svc/search/v2/articlesearch.json?q=election&api-key=Z2WEDMiwO1hxuj5Mwbjc4zMjybe8iNUl'
 }
 
 Vue.component('news-list', {
